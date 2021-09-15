@@ -16,7 +16,6 @@ for a in arr:
 
 print(len(dp) - 1)
 
-
 #### use private function ####
 # import sys
 # input = sys.stdin.readline
