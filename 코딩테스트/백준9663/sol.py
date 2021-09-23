@@ -20,7 +20,7 @@ def back(i):
 
     for j in range(n): # 모든 열 순회
 
-        if (not a[j] and not b[i+j] and not c[i-j+n-1]): 
+        if (not a[j] and not b[i+j] and not c[i-j+n-1]): # 수직 , 좌/우 대각선이 모두 false 일때
             a[j] = b[i+j] = c[i-j+n-1] = True # 시도
             back(i+1) #다음줄 진행
             a[j] = b[i+j] = c[i-j+n-1] = False # 안되면 백트래킹
