@@ -9,6 +9,11 @@ n = int(input())
 
 answer = list()
 
+'''
+3 + (1 만드는 갯수)
+2 + (2 만드는 갯수)
+1 + (3 만드는 갯수)'''
+
 for i in range(2, 10001):
     dp[i] += dp[i - 2]
     
