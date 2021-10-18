@@ -1,60 +1,48 @@
-import collections 
+from collections import deque
+import sys
+ 
+n, m, start = map(int, sys.stdin.readline().strip().split())
+ 
+edge = [[] for _ in range(n + 1)]
+ 
+for _ in range(m):
+    v1, v2 = map(int, sys.stdin.readline().strip().split())
+    edge[v1].append(v2)
+    edge[v2].append(v1)
+
+for e in edge:
+    e.sort()
+
+visited = []
+
+def dfs(start_node,visited):
+
+    visited.append(start_node)
+
+    for w in edge[start_node]:
+        if w not in visited:
+            visited = dfs(w,visited)
+    return visited
 
 
-def bfs(graph, start):
+def bfs(start_node,visited):
 
-    visit = list()
-    queue = list()
-
-    queue.append(start)
+    visited.append(start_node)
+    queue = deque([start_node])
 
     while queue:
-        node = queue.pop(0)
-        if node not in visit:
-            visit.append(node)
-            queue.extend(graph[node])
 
-    return visit
+        v = queue.popleft()
 
-def dfs(graph,start):
-    visit = list()
-    stack = list()
+        for w in edge[v]:
+            if w not in visited:
+                visited.append(w)
+                queue.append(w)
 
-    stack.append(start)
-
-    while stack:
-        node = stack.pop()
-        print(node)
-        if node not in visit:
-            visit.append(node)
-            stack.extend(graph[node])
-
-    return visit  
+    return visited
 
 
-n,m,v = map(int,input().split()) # n = 정점 , m = 간선,  v = 탐색을 시작할 정점 번호
-graph = {}
-
-for i in range(m):
-    a,b = list(map(int, input().split()))
-    if i == 0 :
-        graph[a] = [b]
-        graph[b] = [a]
-    elif graph.get(a) == None:
-        graph[a] = [b]
-        graph[b] = [a]
-    else:
-        temp = list()
-        if type(graph[a]) == int:
-            temp.append(graph[a])
-        else:
-            for j in graph[a]:
-                temp.append(j)
-        temp.append(b)
-        graph[a] = temp
-
-
-
-print(dfs(graph, v))
-#print(bfs(graph, v))
+print(*dfs(start,visited))
+visited.clear()
+print(*bfs(start,visited))
 
