@@ -103,3 +103,15 @@ for test_case in range(1, T + 1):
 #     move(atom)
     
 #     print('#{} {}'.format(test_case, result))
+
+# 2
+# 4
+# -1000 0 3 5
+# 1000 0 2 3
+# 0 1000 1 7
+# 0 -1000 0 9
+# 4
+# -1 1 3 3
+# 0 1 1 1
+# 0 0 2 2
+# -1 0 0 9
