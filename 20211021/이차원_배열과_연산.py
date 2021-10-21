@@ -37,6 +37,15 @@ def R():
         while len(x) < maxi:
             x.append(0)
 
+def myzip(x):
+    new = []
+    for i in range(len(x[0])):
+        new.append([])
+        for j in range(len(x)):
+            new[-1].append(x[j][i])
+    return new
+
+
 #100번 돌면서 진행
 for i in range(101):
     rlen = len(matrix)
@@ -48,9 +57,9 @@ for i in range(101):
     if rlen >= clen:
         R()
     else:
-        matrix = list(zip(*matrix))
+        matrix = myzip(matrix)
         R()
-        matrix = list(zip(*matrix))
+        matrix = myzip(matrix)
 #100번 넘으면 -1
 else:
     print(-1)
