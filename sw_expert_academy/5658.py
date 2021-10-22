@@ -54,3 +54,15 @@ for test_case in range(1, T + 1):
     result = solve(lock)
 
     print('#{} {}'.format(test_case, result))
+
+# 5
+# 12 10
+# 1B3B3B81F75E
+# 16 2
+# F53586D76286B2D8
+# 20 14
+# 88F611AE414A751A767B
+# 24 16
+# 044D3EBA6A647B2567A91D0E
+# 28 11
+# 8E0B7DD258D4122317E3ADBFEA99
