@@ -17,15 +17,19 @@ for tc in range(1, int(input()) + 1):
     energy = 0
 
     while 1:
+
         dic = {}
-        for a in atoms:
-            a[0] += dx[a[2]]
-            a[1] += dy[a[2]]
+
+        for i in range(len(atoms)):
+            atoms[i][0] += dx[atoms[i][2]]
+            atoms[i][1] += dy[atoms[i][2]]
             try:
-                dic[(a[0], a[1])].append(a)
+                dic[(atoms[i][0], atoms[i][1])].append(atoms[i])
             except:
-                dic[(a[0], a[1])] = [a]
+                dic[(atoms[i][0], atoms[i][1])] = [atoms[i]]
+
         atoms = []
+        
         for i in dic.keys():
             if len(dic[i]) > 1:
                 for atom in dic[i]:
