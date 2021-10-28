@@ -14,8 +14,6 @@ visited[n] = 0
 ans_count = 0
 ans_way = 0
 
-move_to = [x-1, x+1, 2*x]
-
 while queue:
 
     x = queue.popleft()
@@ -26,7 +24,7 @@ while queue:
         ans_way += 1
         continue
 
-    for nx in move_to:
+    for nx in [x-1, x+1, 2*x]:
 
         if 0 <= nx < 100001:
             
