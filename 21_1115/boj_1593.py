@@ -10,7 +10,7 @@ s = input().rstrip()
 
 start,length,answer = 0,0,0
 
-w_a = [0] * 58 
+w_a = [0] * 58  #65 - 90 대문자, 97 - 122 소문자
 s_a = [0] * 58
 
 for i in w:
