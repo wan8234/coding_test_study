@@ -10,15 +10,15 @@ s = input().rstrip()
 
 start,length,answer = 0,0,0
 
-w_a = [0] * 58 #65 - 90 소문자, 97 - 122 대문자
+w_a = [0] * 58 
 s_a = [0] * 58
 
 for i in w:
-    w_a[ord(i) - 65] += 1
+    w_a[ord(i) - ord('A')] += 1
 
 for i in range(len_s):
 
-    s_a[ord(s[i]) - 65] += 1
+    s_a[ord(s[i]) - ord('A')] += 1
 
     length += 1
     
@@ -29,7 +29,7 @@ for i in range(len_s):
 
         length -= 1
 
-        s_a[ord(s[start]) - 65] -= 1 
+        s_a[ord(s[start]) - ord('A')] -= 1 
         
         start += 1
         
