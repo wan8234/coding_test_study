@@ -6,7 +6,6 @@ r,c = map(int,input().split())
 
 board = [list(input().rstrip()) for _ in range(r)]
 
-start_x,start_y = 0 ,0
 
 dx = [0, 1, 0, -1]
 dy = [1, 0, -1, 0]
@@ -14,7 +13,7 @@ dy = [1, 0, -1, 0]
 answer = 1
 
 
-def bfs(x,y):
+def bfs():
 
     global answer
 
@@ -39,7 +38,7 @@ def bfs(x,y):
 
                     answer = max(answer,len(visited)+1)
 
-bfs(start_x,start_y)
+bfs()
 
 print(answer)
 
