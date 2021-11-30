@@ -31,7 +31,6 @@ def dijkstra():
 
     return distance[N - 1][N - 1]
 
-
 while True:
     N = int(input())
     if N == 0:
