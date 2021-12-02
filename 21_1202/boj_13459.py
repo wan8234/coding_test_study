@@ -29,7 +29,9 @@ for i in range(n):
 q.append((Rx, Ry, Bx, By, 0))
 visited[Rx][Ry][Bx][By] = True
 
-def move(x,y,dx,dy,dist):
+def move(x,y,dx,dy):
+
+    dist = 0
 
     while board[x + dx][y + dy] != '#' and board[x][y] != 'O':
 
@@ -49,8 +51,8 @@ while q:
 
     for i in range(len(dx)):
 
-        nrx,nry,r_dist = move(rx,ry,dx[i],dy[i],0)
-        nbx,nby,b_dist = move(bx,by,dx[i],dy[i],0)
+        nrx,nry,r_dist = move(rx,ry,dx[i],dy[i])
+        nbx,nby,b_dist = move(bx,by,dx[i],dy[i])
 
         if board[nbx][nby] == 'O': # 파란구슬이 먼저 구멍에 들어가거나 동시에 들어가면 안됨 따라서 이 경우 무시
             continue
