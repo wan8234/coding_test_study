@@ -26,9 +26,6 @@ for i in range(n):
         if board[i][j] == 'B':
             Bx,By = i,j
 
-q.append((Rx, Ry, Bx, By, 0))
-visited[Rx][Ry][Bx][By] = True
-
 def move(x,y,dx,dy):
 
     dist = 0
@@ -41,6 +38,9 @@ def move(x,y,dx,dy):
 
     return x,y,dist
 
+
+q.append((Rx, Ry, Bx, By, 0))
+visited[Rx][Ry][Bx][By] = True
 
 while q:
 
