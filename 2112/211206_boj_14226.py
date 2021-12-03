@@ -23,7 +23,7 @@ def bfs(emo, clip):
 		if e - 1 >= 0 and dp[e - 1][c] == -1:
 			dp[e - 1][c] = dp[e][c] + 1
 			queue.append((e - 1, c))
-
+            
 bfs(1, 0)
 answer = int(1e9)
 for i in range(S + 1):
