@@ -21,7 +21,7 @@
 #### SOLVE 1 ####
 import sys
 input = sys.stdin.readline
-
+ 
 first = input().rstrip()
 second = input().rstrip()
 
