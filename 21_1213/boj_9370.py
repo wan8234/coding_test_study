@@ -64,10 +64,10 @@ for _ in range(T):
 
     for c in candidate_list:
 
-        path_1 = s_dijk[g] + g_dijk[h] + h_dijk[c] 
-        path_2 = s_dijk[h] + h_dijk[g] + g_dijk[c]
+        path_1 = s_dijk[g] + g_dijk[h] + h_dijk[c] # 시작점에서 g -> h를 거쳐서 c 까지 가는 최소값
+        path_2 = s_dijk[h] + h_dijk[g] + g_dijk[c] # 시작점에서 h -> g를 거쳐서 c 까지 가는 최소값 
 
-        target = s_dijk[c]
+        target = s_dijk[c] #시작점에서 c까지 바로가는 최소값
 
         if path_1 == target or path_2 == target:
             answer_list.append(c)
