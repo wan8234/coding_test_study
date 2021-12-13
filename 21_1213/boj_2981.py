@@ -1,4 +1,5 @@
 import sys
+import math
 
 input = sys.stdin.readline
 
@@ -33,8 +34,8 @@ for i in range(1, len(diffs)):
  
 results = []
 
-for i in range(2, int(pow(gcd, 0.5)) + 1):
-    
+for i in range(2, int(math.sqrt(gcd)) + 1):
+
     if gcd % i == 0:  
         results.append(i)
 
