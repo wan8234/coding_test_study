@@ -5,26 +5,28 @@ input = sys.stdin.readline
 
 def dijkstra(start):
 
-    q = list()
 
     distance = [INF] * (n + 1)
     distance[start] = 0
 
-    heapq.heappush(q, (0, start))
-    
-    while q:
+    q = []
 
-        dist, now = heapq.heappop(q)
+    heapq.heappush(q, (start, 0))
+    
+
+    while q:
+        
+        now, dist = heapq.heappop(q)
 
         if distance[now] < dist:
             continue
 
         for i in graph[now]:
-            cost = dist + i[1]
+            cost = i[1] + dist
 
             if cost < distance[i[0]]:
                 distance[i[0]] = cost
-                heapq.heappush(q, (cost, i[0]))
+                heapq.heappush(q, (i[0], cost))
 
     return distance
 
