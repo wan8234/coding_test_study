@@ -60,8 +60,16 @@ for _ in range(T):
     g_dijk = dijkstra(g)
     h_dijk = dijkstra(h) 
 
+
+
     for c in candidate_list:
-        if s_dijk[g] + g_dijk[h] + h_dijk[c] == s_dijk[c] or s_dijk[h] + h_dijk[g] + g_dijk[c] == s_dijk[c]:
+
+        path_1 = s_dijk[g] + g_dijk[h] + h_dijk[c] 
+        path_2 = s_dijk[h] + h_dijk[g] + g_dijk[c]
+
+        target = s_dijk[c]
+
+        if path_1 == target or path_2 == target:
             answer_list.append(c)
 
     answer_list.sort()
