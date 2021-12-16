@@ -14,6 +14,7 @@ for i in range(len(S1)):
             if answer < dp[j]:
                 answer = dp[j]
         else:
+            #연속이 끊긴 것
             dp[j] = 0
 
 print(answer)
