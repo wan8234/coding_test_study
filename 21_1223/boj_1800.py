@@ -33,6 +33,7 @@ def dijkstra(start, cost_limit):
             continue
 
         for i in graph[index]:
+
             if i[0] > cost_limit:
                 if cost + 1 < distance[i[1]]:
                     distance[i[1]] = cost + 1
@@ -53,9 +54,10 @@ left, right = 0, 1000001
 answer = INF
 
 while left <= right:
+
     mid = (left + right) // 2
-    flag = dijkstra(1, mid)
-    if flag:
+
+    if dijkstra(1, mid):
         right = mid - 1
         answer = mid
     else:
