@@ -21,7 +21,6 @@ def dfs(y,x):
     if x == C-1: #마지막 열에 도달하면 성공
         return True
 
-
     for i in range(len(dy)):
 
         nx = x + dx
@@ -29,7 +28,7 @@ def dfs(y,x):
 
         if 0 <= nx < C and 0 <= ny < R and graph[ny][nx] == '.':
 
-            if dfs(ny,nx): # 마지막 열까지 파이프 설치시 True 반환
+            if dfs(ny,nx): #
                 return True
 
     return False
