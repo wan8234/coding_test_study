@@ -12,12 +12,16 @@ def get_pi(P):
     pi = [0 for i in range(m)]
     idx = 0
     for i in range(1, m):
-        while idx > 0 and P[i] != P[idx]: #idx가 0이거나, i와idx의 문자열이 같을때까지 반복
+        while idx > 0 and P[i] != P[idx]: 
             idx = pi[idx - 1]
 
-        if P[i] == P[idx]: #i와 idx가 같을경우 idx증가
+        # i가 가리키는 문자와 idx가 가리키는 문자가 같다면
+        # idx를 1증가시키고 pi[i](failure배열)의 값을 1 증가시킨다
+        # idx는 가장 길게 매칭된 부분 문자열의 길이
+        
+        if P[i] == P[idx]: 
             idx += 1
-            pi[i] = idx #i번쨰의 값으로 idx 저장
+            pi[i] = idx 
 
     return max(pi)
 
