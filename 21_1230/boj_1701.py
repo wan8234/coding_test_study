@@ -11,7 +11,10 @@ def get_pi(P):
     m = len(P)
     pi = [0 for i in range(m)]
     idx = 0
+    
+    
     for i in range(1, m):
+              
         while idx > 0 and P[i] != P[idx]: 
             idx = pi[idx - 1]
 
